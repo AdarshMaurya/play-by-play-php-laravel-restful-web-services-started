@@ -84,7 +84,24 @@ class MeetingController extends Controller
      */
     public function show($id)
     {
-        return "It works";
+        $meeting = [
+            'title' => 'Title',
+            'description' => 'Description',
+            'time' => 'Time',
+            'user_id' => 'User Id',
+            'view_meeting' => [
+                'href' => 'api/v1/meeting',
+                'method' => 'GET'
+            ]
+        ];
+
+        $response =[
+            'msg' => 'Meeting information',
+            'meeting' => $meeting
+        ];
+
+        return response()->json($response,200);
+        //return "It works";
     }
 
     /**
