@@ -17,7 +17,34 @@ class RegistrationController extends Controller
     {
         $meeting_id = $request->input('meeting_id');
         $user_id = $request->input('meeting_id');
-        return "It works";
+
+        $meeting = [
+            'title' => 'Title',
+            'description' => 'Description',
+            'time' => 'Time',
+            'user_id' => 'User Id',
+            'view_meeting' => [
+                'href' => 'api/v1/meeting/1',
+                'method' => 'GET'
+            ]
+        ];
+
+        $user = [
+            'name' => 'Name'
+        ];
+
+        $response =[
+            'msg' => 'List of all Meetings',
+            'meeting' => $meeting,
+            'user' => $user,
+            'unregister' => [
+                'href' => 'api/v1/meeting/registration/1',
+                'method' => 'DELETE'
+            ]
+        ];
+
+        return response()->json($response, 200);
+       // return "It works";
     }
 
     /**
@@ -28,6 +55,32 @@ class RegistrationController extends Controller
      */
     public function destroy($id)
     {
-        return "It works";
+        $meeting = [
+            'title' => 'Title',
+            'description' => 'Description',
+            'time' => 'Time',
+            'user_id' => 'User Id',
+            'view_meeting' => [
+                'href' => 'api/v1/meeting/1',
+                'method' => 'GET'
+            ]
+        ];
+
+        $user = [
+            'name' => 'Name'
+        ];
+
+        $response =[
+            'msg' => 'List of all Meetings',
+            'meeting' => $meeting,
+            'user' => $user,
+            'unregister' => [
+                'href' => 'api/v1/meeting/registration/1',
+                'method' => 'DELETE'
+            ]
+        ];
+
+        return response()->json($response, 200);
+        //return "It works";
     }
 }

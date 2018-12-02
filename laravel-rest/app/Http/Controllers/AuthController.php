@@ -10,12 +10,47 @@ class AuthController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
-        return "It works";
+
+        $user = [
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'signin' => [
+                'href' => 'api/v1/user/signin',
+                'method' => 'POST',
+                'params' => 'email, password'
+            ]
+        ];
+
+        $response =[
+            'msg' => 'User created',
+            'user' => $user
+        ];
+
+        return response()->json($response,201);
+        //return "It works";
     }
 
     public function signin(Request $request){
         $email = $request->input('email');
         $password = $request->input('password');
-        return "It works";
+
+        $user = [
+            'email' => $email,
+            'password' => $password,
+            'signin' => [
+                'href' => 'api/v1/user/signin',
+                'method' => 'POST',
+                'params' => 'email, password'
+            ]
+        ];
+
+        $response =[
+            'msg' => 'Authenticated',
+            'user' => $user
+        ];
+
+        return response()->json($response,200);
+        //return "It works";
     }
 }
