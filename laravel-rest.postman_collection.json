@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "c543e8ba-086a-4c9d-85fc-fbd7f41599a9",
+		"name": "laravel-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get meeting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"5"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post meeting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.5:8000/api/v1/meeting",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"5"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch meeting",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"5"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete meeting",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"5"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.5:8000/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"5"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
