@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//https://blog.pusher.com/csrf-laravel-verifycsrftoken/
+//https://stackoverflow.com/questions/46266553/why-laravel-api-return-419-status-code-on-post-and-put-method
