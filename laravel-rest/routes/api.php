@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +34,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::group(['prefix' => 'api/v1'], function(){
+Route::group(['prefix' => 'v1'], function(){
     Route::resource('meeting', 'MeetingController',[
         'except' =>['edit', 'create']
     ]);
@@ -52,4 +51,3 @@ Route::group(['prefix' => 'api/v1'], function(){
     ]);
 
 });
-
