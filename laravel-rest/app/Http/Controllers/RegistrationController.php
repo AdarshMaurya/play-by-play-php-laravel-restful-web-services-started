@@ -10,11 +10,17 @@ class RegistrationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'meeting_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
         $meeting_id = $request->input('meeting_id');
         $user_id = $request->input('meeting_id');
 
