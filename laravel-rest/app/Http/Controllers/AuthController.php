@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
 
+
 class AuthController extends Controller
 {
     /**
@@ -61,6 +62,8 @@ class AuthController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function signin(Request $request){
+
+        //https://jwt-auth.readthedocs.io/en/docs/quick-start/#update-your-user-model
 
         $this->validate($request, [
             'email' => 'required|email',
