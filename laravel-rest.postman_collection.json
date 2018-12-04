@@ -9,19 +9,30 @@
 			"name": "Get meeting",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"raw": "http://192.168.0.4:8000/api/v1/meeting/1",
 					"protocol": "http",
 					"host": [
 						"192",
 						"168",
 						"0",
-						"5"
+						"4"
 					],
 					"port": "8000",
 					"path": [
@@ -29,34 +40,6 @@
 						"v1",
 						"meeting",
 						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post meeting",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://192.168.0.5:8000/api/v1/meeting",
-					"protocol": "http",
-					"host": [
-						"192",
-						"168",
-						"0",
-						"5"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"v1",
-						"meeting"
 					]
 				}
 			},
@@ -66,26 +49,44 @@
 			"name": "Patch meeting",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\t\n\t\"time\": \"201812040146UTC\",\n\t\"timezone_code\": \"UTC\",\n\t\"title\": \"TitleX\",\n\t\"description\": \"DescriptionY\"\n}"
 				},
 				"url": {
-					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"raw": "http://192.168.0.4:8000/api/v1/meeting/6?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjU4NDQsImV4cCI6MTU0Mzk2OTQ0NCwibmJmIjoxNTQzOTY1ODQ0LCJqdGkiOiJQb21zeUpzRDFuMXlRYm9mIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.j3hglMpJFo0aFNpM7Am8xdCUyV85vDd1PccOIRMLh-g",
 					"protocol": "http",
 					"host": [
 						"192",
 						"168",
 						"0",
-						"5"
+						"4"
 					],
 					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"meeting",
-						"1"
+						"6"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjU4NDQsImV4cCI6MTU0Mzk2OTQ0NCwibmJmIjoxNTQzOTY1ODQ0LCJqdGkiOiJQb21zeUpzRDFuMXlRYm9mIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.j3hglMpJFo0aFNpM7Am8xdCUyV85vDd1PccOIRMLh-g"
+						}
 					]
 				}
 			},
@@ -101,13 +102,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://192.168.0.5:8000/api/v1/meeting/1",
+					"raw": "http://192.168.0.4:8000/api/v1/meeting/1",
 					"protocol": "http",
 					"host": [
 						"192",
 						"168",
 						"0",
-						"5"
+						"4"
 					],
 					"port": "8000",
 					"path": [
@@ -130,19 +131,277 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://192.168.0.5:8000/api/v1/user",
+					"raw": "http://192.168.0.4:8000/api/v1/user",
 					"protocol": "http",
 					"host": [
 						"192",
 						"168",
 						"0",
-						"5"
+						"4"
 					],
 					"port": "8000",
 					"path": [
 						"api",
 						"v1",
 						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Meeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjQ2NDMsImV4cCI6MTU0Mzk2ODI0MywibmJmIjoxNTQzOTY0NjQzLCJqdGkiOiJLNVlmNDBObEFxem9OdGNQIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.epJjMQMbbOjMdFtuWaJmY8aCRMPZ_nnFZeIAOO-a7Uk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"time\" : \"201801301330IST\",\n\t\"title\" : \"Test Meeting 2\",\n\t\"description\" : \"Test\"\n}\t"
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/meeting",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Meeting without Authorization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"time\" : \"201801301330CET\",\n\t\"title\" : \"Monk Test Meeting \",\n\t\"description\" : \"Monk Test\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/meeting?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjUzMjAsImV4cCI6MTU0Mzk2ODkyMCwibmJmIjoxNTQzOTY1MzIwLCJqdGkiOiJqYUlzaWtRa29lSWNhZzNSIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.RDtL0HnV0FtNANQbRIO2CYTclnpzI3J_HXByLi5K2EM&=",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjUzMjAsImV4cCI6MTU0Mzk2ODkyMCwibmJmIjoxNTQzOTY1MzIwLCJqdGkiOiJqYUlzaWtRa29lSWNhZzNSIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.RDtL0HnV0FtNANQbRIO2CYTclnpzI3J_HXByLi5K2EM"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"monk3\",\n\t\"email\" : \"monk3@softhinkers.com\",\n\t\"password\" : \"test_pw\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Meeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": \"10\",\n\t\"meeting_id\":\"3\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/meeting/registration?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjY5NTgsImV4cCI6MTU0Mzk3MDU1OCwibmJmIjoxNTQzOTY2OTU4LCJqdGkiOiJTYVBHN2lxUVhRMkZMM1ZQIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JUIysK2yEiYyCsMMpJrzIn4mJY7lfxc_sIymTi1CbLU",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting",
+						"registration"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjY5NTgsImV4cCI6MTU0Mzk3MDU1OCwibmJmIjoxNTQzOTY2OTU4LCJqdGkiOiJTYVBHN2lxUVhRMkZMM1ZQIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JUIysK2yEiYyCsMMpJrzIn4mJY7lfxc_sIymTi1CbLU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unregister for meeting",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/meeting/registration/3?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjY5NTgsImV4cCI6MTU0Mzk3MDU1OCwibmJmIjoxNTQzOTY2OTU4LCJqdGkiOiJTYVBHN2lxUVhRMkZMM1ZQIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JUIysK2yEiYyCsMMpJrzIn4mJY7lfxc_sIymTi1CbLU",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"meeting",
+						"registration",
+						"3"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNDo4MDAwXC9hcGlcL3YxXC91c2VyXC9zaWduaW4iLCJpYXQiOjE1NDM5NjY5NTgsImV4cCI6MTU0Mzk3MDU1OCwibmJmIjoxNTQzOTY2OTU4LCJqdGkiOiJTYVBHN2lxUVhRMkZMM1ZQIiwic3ViIjo5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JUIysK2yEiYyCsMMpJrzIn4mJY7lfxc_sIymTi1CbLU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIginin User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"monk2@softhinkers.com\",\n\t\"password\" : \"test_pw\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8000/api/v1/user/signin",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signin"
 					]
 				}
 			},
